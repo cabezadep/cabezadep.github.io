@@ -1,9 +1,14 @@
 html, body {margin: 0; height: 100%;}
 
+:root {
+   --bg-color: #131314;
+   --fg-color: #cccce5;
+}
+
 html {
+   background: var(--bg-color);
+   color: var(--fg-color);
    font-family: monospace;
-   background: #131314;
-   color: #e6e6f1;
 }
 
 .wrapper {
@@ -11,7 +16,23 @@ html {
    align-items: center; 
    justify-content: center; 
    min-height: 100vh;
+   flex-direction: column;
 }
+
+.header {
+   text-align: right;
+   width: 100%;
+}
+
+
+.header-content {
+   font-weight: 600;
+   font-style: italic;
+   padding: 0.25rem 2rem;
+   padding-bottom: 0;
+   font-size: 2.5rem;
+}
+
 
 .tag-line {
    font-size: 2rem;
@@ -24,9 +45,85 @@ html {
 }
 
 .block {
-   border-bottom: 1px solid #fff;
+   border-bottom: 1px solid var(--fg-color);
 }
 
 .block p {
    text-indent: 1rem;
+}
+
+
+.releases {
+   text-align: left;
+   width: 100%;
+}
+
+.releases-content {
+   margin: 0.25rem 8rem;
+}
+
+.game-list {
+   margin: 0 1rem;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center; 
+   justify-content: center; 
+}
+
+
+.game-card {
+
+   text-align: center;
+   border-radius: 10%;
+
+   background-position: center center;
+   background-repeat: no-repeat; 
+   background-size: cover;
+
+   justify-content: center;
+   flex-direction: column;
+   display: flex;
+
+   min-width: 25rem;
+   min-height: 25rem;
+   margin: 0.5rem 2rem;
+
+   flex: 1 0 25%; 
+   margin: 5px;
+}
+
+
+.game-card p {
+   text-shadow: var(--bg-color) 1px 0 10px;
+   font-weight: 600;
+}
+
+
+/* show game title/info on hover only */
+.game-info { display: none; }
+
+.game-card:hover game-cover {
+   display: none;
+}
+
+.game-title {
+   font-weight: 600;
+   font-size: 4rem;
+   display: block;
+}
+
+.game-card:hover .game-info {
+   justify-self: flex-center;
+   font-size: 1.25rem;
+   padding: 0.5rem;
+   display: block;
+}
+
+.game-card:hover .game-title {
+   display: none;
+}
+
+a {
+  font-weight: bold;
+  color: hotpink;
 }
