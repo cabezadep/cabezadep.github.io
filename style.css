@@ -89,7 +89,7 @@ html {
    margin: 0.5rem 2rem;
 
    flex: 1 0 25%; 
-   margin: 5px;
+   margin: 0.4rem;
 }
 
 
@@ -127,4 +127,12 @@ html {
 a {
   font-weight: bold;
   color: hotpink;
+}
+
+
+@media (pointer:none), (pointer:coarse) {
+
+   html {
+      font-size: 1.75rem;
+   }
 }
